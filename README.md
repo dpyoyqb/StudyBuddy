@@ -1,0 +1,2 @@
+# StudyBuddy
+Software für Softwaretechnik
