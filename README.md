@@ -1,3 +1,3 @@
 # StudyBuddy
-Software für Softwaretechnik
-von Softwaretechnikerinnen
+Software für Studierende
+von Studierenden
