@@ -2,4 +2,4 @@
 Software für Studierende
 von Studierenden
 
-<img width="400" height="400" alt="Logo" src="https://github.com/user-attachments/assets/aa6357eb-43f1-4503-843f-8235d56093d8" />
+<img width="1254" height="629" alt="Logo_schmal" src="https://github.com/user-attachments/assets/81709b9a-c4d8-4042-b29a-eeda30371968" />
