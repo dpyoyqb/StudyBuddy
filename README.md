@@ -45,7 +45,8 @@ Jedes Teammitglied ergänzt seine Rolle über einen eigenen Feature-Branch (sieh
 
 ### Hannah Ribbers
 
-<!-- Rolle und Aufgaben werden über den Branch feature-hannah ergänzt -->
+- **Rolle:** Anforderungen und Sicherheit
+- **Aufgaben:** Pflege der Anforderungsliste, Projektdokumentation
 
 ## Mitarbeit
 
