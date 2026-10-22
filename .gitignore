@@ -1,0 +1,27 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Java / Build
+*.class
+*.jar
+*.war
+*.log
+target/
+build/
+.gradle/
+
+# Betriebssysteme
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Zugangsdaten und lokale Konfiguration (niemals committen)
+.env
+*.env
+application-local.properties
+*.key
+*.pem
