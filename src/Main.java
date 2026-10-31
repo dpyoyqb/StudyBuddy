@@ -2,14 +2,14 @@
  * =====================================================================
  *  StudyBuddy – Main.java
  * =====================================================================
- * Zum AUsführen auf den grünen Pfeil neben "main" klicken
+ * zum Ausführen auf den grünen Pfeil neben "main" klicken
  *
  *  Das Programm besteht aus drei Dateien:
  *    Main.java           -> startet alles (diese Datei)
  *    AnmeldeLogik.java   -> prüft E-Mail und Passwort (macht die "Denkarbeit")
  *    AnmeldeFenster.java -> zeigt das Fenster an (das, was man sieht)
  *
- * Durch das Trennen von Logik & Ansicht (Anmeldefenster) können die Bereiche unabhängig voneinander verbessert/korrigiert/verändert werden.
+ * durch das Trennen von Logik & Ansicht (Anmeldefenster) können die Bereiche unabhängig voneinander verbessert/korrigiert/verändert werden.
  * =====================================================================
  */
 public class Main {
