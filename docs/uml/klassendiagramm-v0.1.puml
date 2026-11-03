@@ -1,0 +1,64 @@
+@startuml klassendiagramm-v0.1
+' StudyBuddy – Klassendiagramm v0.1 (Übungsblatt 5, Aufgabe 1c)
+' Erste Kernklassen, noch ohne Beziehungen.
+
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam class {
+  BackgroundColor #FFF8F0
+  BorderColor #9E5228
+  ArrowColor #4A2C18
+}
+hide circle
+title StudyBuddy – Klassendiagramm v0.1
+
+class Nutzer {
+  - nutzerId: int
+  - name: String
+  - email: String
+  - passwortHash: String
+  - aktivitaetspunkte: int
+  --
+  + registrieren(email: String, name: String, passwort: String): boolean
+  + anmelden(passwort: String): boolean
+  + dokumentHochladen(dokument: Dokument, rechteBestaetigt: boolean): boolean
+}
+
+class Dokument {
+  - dokumentId: int
+  - titel: String
+  - modul: String
+  - dateipfad: String
+  - hochgeladenAm: LocalDateTime
+  --
+  + herunterladen(): byte[]
+  + frageHinzufuegen(text: String, seite: int): Frage
+  + fragenAnzeigen(): List<Frage>
+}
+
+class Lernbereich {
+  - bereichId: int
+  - name: String
+  - beschreibung: String
+  - erstelltAm: LocalDateTime
+  --
+  + einladungslinkErzeugen(gueltigTage: int): String
+  + beitreten(nutzer: Nutzer, token: String): boolean
+  + istMitglied(nutzer: Nutzer): boolean
+}
+
+class Avatar {
+  - avatarId: int
+  - motiv: String = "Teddybär"
+  - aktuellesAccessoire: String
+  --
+  + accessoireFreischalten(name: String): boolean
+  + accessoireAnlegen(name: String): void
+}
+
+Nutzer -[hidden]right- Dokument
+Lernbereich -[hidden]right- Avatar
+Nutzer -[hidden]down- Lernbereich
+@enduml
