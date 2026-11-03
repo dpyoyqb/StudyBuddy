@@ -8,7 +8,7 @@ Semesterprojekt im Modul **Softwaretechnik** (Prof. Dr. Selcan Ipek-Ugay), BHT �
 
 ## Projektidee
 
-StudyBuddy ist eine Lern- und Austauschplattform von Studierenden für Studierende. Nutzer melden sich mit ihrer Hochschul-E-Mail-Adresse an und können Notizen, Altklausuren, Vorlesungsunterlagen und Transkripte hochladen und miteinander teilen. Fragen lassen sich direkt an einer bestimmten Stelle im Dokument hinterlegen und von anderen beantworten. Für Lerngruppen gibt es passwortgeschützte eigene Bereiche. Ein Teddybär begleitet die Nutzer als Maskottchen und Avatar, der mit zunehmender Aktivität weitere Accessoires freischaltet.
+StudyBuddy ist eine Lern- und Austauschplattform von Studierenden für Studierende. Nutzer melden sich mit ihrer Hochschul-E-Mail-Adresse an und können Notizen, Altklausuren, Vorlesungsunterlagen und Transkripte hochladen und miteinander teilen. Fragen lassen sich direkt an einer bestimmten Stelle im Dokument hinterlegen und von anderen beantworten. Für Lerngruppen gibt es geschützte eigene Bereiche, denen man über einen Einladungslink beitritt. Ein Teddybär begleitet die Nutzer als Maskottchen und Avatar, der mit zunehmender Aktivität weitere Accessoires freischaltet.
 
 ## Kernfunktionen (Muss-Anforderungen)
 
@@ -16,7 +16,7 @@ StudyBuddy ist eine Lern- und Austauschplattform von Studierenden für Studieren
 |----|-------------|
 | F01 | Anmeldung ausschließlich mit E-Mail-Adresse der Uni-Domain |
 | F03–F05 | Hochladen und Teilen von Notizen, Altklausuren, Vorlesungsunterlagen und Transkripten |
-| F08–F09 | Passwortgeschützte eigene Bereiche, Inhalte nur mit Passwort sichtbar |
+| F08–F09 | Geschützte eigene Bereiche, Beitritt nur per Einladungslink, Inhalte nur für Mitglieder sichtbar |
 | F11 | Standard-Avatar (Teddybär) für jeden Nutzer |
 | NF01 | Passwörter werden ausschließlich gehasht gespeichert (bcrypt/Argon2) |
 | NF02 | Gesamte Kommunikation verschlüsselt über HTTPS/TLS |
