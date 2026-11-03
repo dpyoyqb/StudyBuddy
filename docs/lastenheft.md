@@ -29,7 +29,7 @@
 | LF10    | Registrierung und Anmeldung ausschließlich mit Hochschul-E-Mail-Adresse                                                    |
 | LF20    | Hochladen und Teilen von Notizen, Altklausuren, Vorlesungsunterlagen und Transkripten mit Bestätigung der Rechte am Inhalt |
 | LF30    | Ansehen, Durchsuchen und Herunterladen geteilter Dokumente                                                                 |
-| LF40    | Passwortgeschützte Lernbereiche anlegen und beitreten                                                                      |
+| LF40    | Geschützte Lernbereiche anlegen und per Einladungslink beitreten                                                                     |
 | LF50    | Automatischer Import von Skripten aus Moodle                                                                               |
 | LF60    | Teddybär als Standard-Avatar und Maskottchen, freischaltbare und käufliche Accessoires                                     |
 | LF70    | Melden und Moderieren unangemessener oder rechtswidriger Inhalte                                                           |
