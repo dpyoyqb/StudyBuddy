@@ -1,0 +1,177 @@
+@startuml klassendiagramm-v1.0
+' StudyBuddy – Klassendiagramm v1.0 (Übungsblatt 5, Aufgabe 2)
+' Kernklassen mit Assoziationen, Aggregation, Komposition, Vererbung und Interface.
+
+skinparam classAttributeIconSize 0
+skinparam classFontStyle bold
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam nodesep 60
+skinparam ranksep 70
+skinparam class {
+  BackgroundColor #FFF8F0
+  BorderColor #9E5228
+  ArrowColor #4A2C18
+}
+hide circle
+hide empty members
+title StudyBuddy – Klassendiagramm v1.0
+
+' Nutzer und Avatar (F01, F11–F13)
+class Nutzer {
+  - nutzerId: int
+  - name: String
+  - email: String
+  - passwortHash: String
+  - aktivitaetspunkte: int
+  --
+  + registrieren(email: String, name: String, passwort: String): boolean
+  + anmelden(passwort: String): boolean
+  + dokumentHochladen(dokument: Dokument, rechteBestaetigt: boolean): boolean
+  + punkteHinzufuegen(punkte: int): void
+}
+
+class Avatar {
+  - avatarId: int
+  - motiv: String = "Teddybär"
+  --
+  + accessoireFreischalten(accessoire: Accessoire): boolean
+  + accessoireAnlegen(accessoire: Accessoire): void
+  + accessoireAblegen(accessoire: Accessoire): void
+}
+
+class Accessoire {
+  - accessoireId: int
+  - name: String
+  - bildpfad: String
+  - benoetigtePunkte: int
+  - preisInCent: int
+  --
+  + istFreischaltbar(punkte: int): boolean
+  + istKaeuflich(): boolean
+}
+
+' Dokumente mit Vererbung (F03–F05) und Fragen/Antworten (F06, F07)
+abstract class Dokument <<abstract>> {
+  - dokumentId: int
+  - titel: String
+  - modul: String
+  - dateipfad: String
+  - hochgeladenAm: LocalDateTime
+  - rechteBestaetigt: boolean
+  --
+  + herunterladen(): byte[]
+  + frageHinzufuegen(text: String, seite: int, autor: Nutzer): Frage
+  + fragenAnzeigen(): List<Frage>
+  # dateitypPruefen(): boolean
+}
+
+class Notiz {
+  - stichworte: List<String>
+}
+
+class Altklausur {
+  - semester: String
+  - pruefer: String
+  - mitLoesung: boolean
+}
+
+class Vorlesungsunterlage {
+  - art: UnterlagenArt
+  - ausMoodleImportiert: boolean
+}
+
+enum UnterlagenArt <<enumeration>> {
+  SKRIPT
+  FOLIEN
+  TRANSKRIPT
+}
+
+class Frage {
+  - frageId: int
+  - text: String
+  - seite: int
+  - stelle: String
+  - gestelltAm: LocalDateTime
+  - geloest: boolean
+  --
+  + beantworten(text: String, autor: Nutzer): Antwort
+  + alsGeloestMarkieren(): void
+}
+
+class Antwort {
+  - antwortId: int
+  - text: String
+  - erstelltAm: LocalDateTime
+  --
+  + bearbeiten(neuerText: String): void
+}
+
+' Geschützte Lernbereiche mit Einladungslink (F08, F09, F15, NF01)
+class Lernbereich {
+  - bereichId: int
+  - name: String
+  - beschreibung: String
+  - erstelltAm: LocalDateTime
+  --
+  + einladungslinkErzeugen(gueltigTage: int): String
+  + beitreten(nutzer: Nutzer, token: String): boolean
+  + istMitglied(nutzer: Nutzer): boolean
+  + dokumentHinzufuegen(dokument: Dokument): void
+}
+
+class Einladungslink {
+  - tokenHash: String
+  - erstelltAm: LocalDateTime
+  - gueltigBis: LocalDateTime
+  - zurueckgezogen: boolean
+  --
+  + istGueltig(): boolean
+  + passtZu(token: String): boolean
+  + zurueckziehen(): void
+}
+
+' Moodle-Import (F10, NF08) – Interface
+interface MoodleSchnittstelle <<interface>> {
+  + skripteImportieren(kursId: String): List<Vorlesungsunterlage>
+}
+
+class MoodleApiAdapter {
+  - apiUrl: String
+  --
+  + skripteImportieren(kursId: String): List<Vorlesungsunterlage>
+}
+
+' Beziehungen
+
+' Komposition: Avatar existiert nur mit seinem Nutzerkonto
+Nutzer "1" *-- "1" Avatar : besitzt >
+
+' Aggregation: Accessoires existieren unabhängig im Katalog
+Avatar "0..*" o-- "0..*" Accessoire : freigeschaltet
+
+' Gerichtete Assoziationen: Dokument/Frage/Antwort kennen ihren Autor
+Dokument "0..*" --> "1" Nutzer : autor
+Frage "0..*" --> "1" Nutzer : autor
+Antwort "0..*" --> "1" Nutzer : autor
+
+' Kompositionen: Fragen gehören zum Dokument, Antworten zur Frage
+Dokument "1" *-- "0..*" Frage : enthält >
+Frage "1" *-- "0..*" Antwort : hat >
+
+' Vererbung
+Dokument <|-- Notiz
+Dokument <|-- Altklausur
+Dokument <|-- Vorlesungsunterlage
+Vorlesungsunterlage ..> UnterlagenArt
+
+' Lernbereich: Inhaber (gerichtet) und Mitglieder (bidirektional)
+Lernbereich "0..*" --> "1" Nutzer : inhaber
+Lernbereich "0..*" -- "1..*" Nutzer : mitglieder
+Lernbereich "0..1" o-- "0..*" Dokument : dokumente
+Lernbereich "1" *-- "0..*" Einladungslink : einladungen >
+
+' Interface-Realisierung und Abhängigkeit
+MoodleApiAdapter ..|> MoodleSchnittstelle
+MoodleSchnittstelle ..> Vorlesungsunterlage : <<erzeugt>>
+@enduml
