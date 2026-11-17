@@ -1,0 +1,39 @@
+@startuml
+title StudyBuddy – Aktivitätsdiagramm „Dokument hochladen und teilen“ (LF20)
+
+|Nutzer|
+start
+:Upload-Seite öffnen;
+|System|
+if (Nutzer angemeldet?) then (nein)
+  :Zur Anmeldung weiterleiten;
+  stop
+else (ja)
+endif
+repeat
+  |Nutzer|
+  :Datei auswählen und Metadaten eingeben
+  (Titel, Modul, Dokumenttyp);
+  :Rechte am Inhalt bestätigen;
+  |System|
+  :Eingaben prüfen
+  (Dateityp, Größe, Pflichtfelder, Rechte);
+  backward:Fehlermeldung anzeigen;
+repeat while (Eingaben gültig?) is (nein) not (ja)
+:Dokument speichern;
+if (Lernbereich gewählt?) then (ja)
+  :Dokument dem Lernbereich zuordnen
+  (nur für Mitglieder sichtbar);
+else (nein)
+  :Dokument öffentlich für
+  Hochschulangehörige freigeben;
+endif
+fork
+  :Aktivitätspunkte gutschreiben;
+fork again
+  :Mitglieder / Interessierte benachrichtigen;
+end fork
+|Nutzer|
+:Bestätigung anzeigen;
+stop
+@enduml
