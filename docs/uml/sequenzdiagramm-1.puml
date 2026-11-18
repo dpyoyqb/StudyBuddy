@@ -1,0 +1,40 @@
+@startuml
+autonumber
+title StudyBuddy – Sequenzdiagramm 1: Anmeldung mit Hochschul-E-Mail (LF10)
+
+actor "Studierende/r" as U
+participant ":AnmeldeFenster" as F
+participant ":AnmeldeLogik" as L
+participant ":NutzerSpeicher" as S
+participant "n:Nutzer" as N
+
+U -> F : anmeldenKlicken(email, passwort)
+activate F
+F -> L : anmelden(email, passwort)
+activate L
+L -> L : istUniEmail(email)
+alt keine Hochschul-Domain
+  L --> F : Fehler „nur Hochschul-E-Mail erlaubt“
+  F --> U : Fehlermeldung anzeigen
+else Domain gültig
+  L -> S : nutzerSuchen(email)
+  activate S
+  S --> L : n
+  deactivate S
+  note right of S : unbekannte E-Mail → Dummy-Nutzer,\ndamit Antwortzeit gleich bleibt\n(keine Nutzer-Enumeration)
+  L -> N : anmelden(passwort)
+  activate N
+  N -> N : passwortHashVergleichen(passwort)
+  N --> L : true / false
+  deactivate N
+  alt false (Nutzer unbekannt oder Passwort falsch)
+    L --> F : Fehler „E-Mail oder Passwort falsch“
+    F --> U : Fehlermeldung anzeigen
+  else true
+    L --> F : Name des Nutzers
+    F --> U : Startseite anzeigen
+  end
+end
+deactivate L
+deactivate F
+@enduml
