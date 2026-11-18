@@ -1,0 +1,23 @@
+@startuml
+title StudyBuddy – Zustandsdiagramm „Dokument“
+
+state "In Prüfung" as InPruefung
+state "Veröffentlicht" as Veroeffentlicht
+state "Gelöscht" as Geloescht
+
+[*] --> Hochgeladen : dokumentHochladen()
+Hochgeladen --> InPruefung : speichern()
+InPruefung --> Abgelehnt : [Dateityp ungültig\noder Rechte nicht bestätigt]
+InPruefung --> Veroeffentlicht : [Prüfung bestanden]
+Veroeffentlicht --> Gemeldet : melden() / Moderation informieren
+Gemeldet --> Veroeffentlicht : Meldung abgewiesen
+Gemeldet --> Gesperrt : Meldung bestätigt
+Veroeffentlicht --> Geloescht : loeschen() [durch Autor\noder Kontolöschung]
+Gesperrt --> Geloescht : Frist abgelaufen / loeschen()
+Abgelehnt --> [*]
+Geloescht --> [*]
+
+InPruefung : do / dateitypPruefen()
+Veroeffentlicht : sichtbar für Berechtigte
+Gesperrt : nur für Moderation sichtbar
+@enduml
