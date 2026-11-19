@@ -1,0 +1,40 @@
+@startuml
+autonumber
+title StudyBuddy – Sequenzdiagramm 2: Lernbereich per Einladungslink beitreten (LF40)
+
+actor "Studierende/r" as U
+participant ":LernbereichSeite" as P
+participant "b:Lernbereich" as B
+participant "e:Einladungslink" as E
+participant "n:Nutzer" as N
+
+U -> P : einladungslinkOeffnen(token)
+activate P
+P -> B : beitreten(n, token)
+activate B
+B -> B : istMitglied(n)
+alt bereits Mitglied
+  B --> P : true
+  P --> U : Lernbereich anzeigen
+else noch kein Mitglied
+  B -> E : passtZu(token)
+  activate E
+  E --> B : true / false
+  B -> E : istGueltig()
+  E --> B : true / false
+  deactivate E
+  alt Token passt und Link gültig
+    B -> B : mitgliedHinzufuegen(n)
+    B -> N : punkteHinzufuegen(5)
+    activate N
+    deactivate N
+    B --> P : true
+    P --> U : Lernbereich mit Dokumenten anzeigen
+  else Link falsch, abgelaufen oder zurückgezogen
+    B --> P : false
+    P --> U : Hinweis „Einladungslink ungültig“
+  end
+end
+deactivate B
+deactivate P
+@enduml
