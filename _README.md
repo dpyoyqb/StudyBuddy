@@ -30,8 +30,8 @@ Die vollständige Anforderungsliste (funktional und nicht-funktional, mit Priori
 ```
 StudyBuddy/
 ├── docs/               Projektdokumentation (Anforderungen, Diagramme, Architektur)
-├    ├── anforderungen  Anforderungsliste als .xlsx
-├    └── uml            Diagramme als .puml (PlantUML Text)
+│    ├── anforderungen  Anforderungsliste als .xlsx
+│    └── uml            Diagramme als .puml (PlantUML Text)
 ├── src/                Quellcode
 ├── tests/              Unit- und Integrationstests
 ├── StudyBuddy_Bilder/  Logos, Avatar, Emojis und weitere Grafiken
