@@ -3,7 +3,7 @@
 ## Aufgabe 1
 ## Aktivitätsdiagramm: Dokument hochladen und teilen
 
-Datei: `aktivitaetsdiagramm-dokument-hochladen.png`
+Datei: [aktivitaetsdiagramm-dokument-hochladen.png](./aktivitaetsdiagramm-dokument-hochladen.png)
 
 **Modellierter Use Case:** „Nutzer lädt ein Dokument hoch & teilt es“ (LF20 / F03–F05). Das ist die Kernfunktion von StudyBuddy: 
   Ohne geteilte Unterlagen gibt es keine Fragen, keine Lernbereiche mit Inhalt & keine Aktivitätspunkte für den Avatar
@@ -22,7 +22,7 @@ Nach dem Speichern laufen zwei Aktionen parallel (Fork/Join): (1) Aktivitätspun
 ## Aufgabe 2
 ## Sequenzdiagramm 1: Anmeldung mit Hochschul-E-Mail
 
-Datei: `sequenzdiagramm-1.png`
+Datei: [sequenzdiagramm-1.png](./sequenzdiagramm-1.png)
 
 - **Interaktion:** Ein Studierender meldet sich mit E-Mail & Passwort an (LF10 / F01)
 - **Beteiligte Klassen:** `AnmeldeFenster` (Oberfläche), `AnmeldeLogik`, `NutzerSpeicher`, `Nutzer`
@@ -30,7 +30,7 @@ Datei: `sequenzdiagramm-1.png`
 
 ## Sequenzdiagramm 2: Lernbereich per Einladungslink beitreten
 
-Datei: `sequenzdiagramm-2.png`
+Datei: [sequenzdiagramm-2.png](./sequenzdiagramm-2.png)
 
 - **Interaktion:** Ein Studierender öffnet einen Einladungslink & tritt einem geschützten Lernbereich bei (LF40 / F08–F09)
 - **Beteiligte Klassen:** `LernbereichSeite` (Oberfläche), `Lernbereich`, `Einladungslink`, `Nutzer`
