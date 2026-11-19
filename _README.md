@@ -13,7 +13,7 @@ StudyBuddy ist eine Lern- und Austauschplattform von Studierenden für Studieren
 ## Kernfunktionen (Muss-Anforderungen)
 
 | ID | Anforderung |
-|----|-------------|
+|---------|-------------|
 | F01 | Anmeldung ausschließlich mit E-Mail-Adresse der Uni-Domain |
 | F03–F05 | Hochladen und Teilen von Notizen, Altklausuren, Vorlesungsunterlagen und Transkripten |
 | F08–F09 | Geschützte eigene Bereiche, Beitritt nur per Einladungslink, Inhalte nur für Mitglieder sichtbar |
@@ -23,20 +23,22 @@ StudyBuddy ist eine Lern- und Austauschplattform von Studierenden für Studieren
 | NF03 | DSGVO-konforme Verarbeitung personenbezogener Daten |
 | NF04 | Beim Hochladen bestätigt der Nutzer die Rechte am Inhalt |
 
-Die vollständige Anforderungsliste (funktional und nicht-funktional, mit Prioritäten) liegt unter [`docs/anforderungen/`](docs/anforderungen/).
+Die vollständige Anforderungsliste (funktional und nicht-funktional, mit Prioritäten) liegt unter [anforderungen](./docs/anforderungen).
 
 ## Projektstruktur
 
 ```
 StudyBuddy/
-├── docs/              Projektdokumentation (Anforderungen, Diagramme, Architektur)
-├── src/               Quellcode
-├── tests/             Unit- und Integrationstests
-├── StudyBuddy_Bilder/ Logos, Avatar, Emojis und weitere Grafiken
-├── LICENSE            Apache-2.0
-├── README.md          Projektbeschreibung (diese Datei)
-├── WORKFLOW.md    Team-Workflow, Branching-Strategie, Commit-Konventionen
-└── .gitignore     Dateien, die nicht versioniert werden
+├── docs/               Projektdokumentation (Anforderungen, Diagramme, Architektur)
+├    ├── anforderungen  Anforderungsliste als .xlsx
+├    └── uml            Diagramme als .puml (PlantUML Text)
+├── src/                Quellcode
+├── tests/              Unit- und Integrationstests
+├── StudyBuddy_Bilder/  Logos, Avatar, Emojis und weitere Grafiken
+├── LICENSE             Apache-2.0
+├── README.md           Projektbeschreibung (diese Datei)
+├── WORKFLOW.md         Team-Workflow, Branching-Strategie, Commit-Konventionen
+└── .gitignore          Dateien, die nicht versioniert werden
 ```
 
 ## Team und Rollen
@@ -47,6 +49,12 @@ Jedes Teammitglied ergänzt seine Rolle über einen eigenen Feature-Branch (sieh
 
 - **Rolle:** Anforderungen und Sicherheit
 - **Aufgaben:** Pflege der Anforderungsliste, Projektdokumentation
+
+### Patrick Schneider
+
+- **Rolle:** Quality Control und Corporate Design
+- **Aufgaben:** Gestaltung & Grafik, Gesamtbild, Marketing
+
 
 ## Mitarbeit
 

@@ -4,8 +4,8 @@
 
 | Name | Rolle |
 |------|-------|
-| Hannah Ribbers | [Rolle] |
-| [Name] | [Rolle] |
+| Hannah Ribbers | Anforderungen und Sicherheit |
+| Patrick Schneider | Quality Control und Corporate Design |
 | [Name] | [Rolle] |
 | [Name] | [Rolle] |
 
@@ -51,7 +51,7 @@ Regeln:
 5. Branch pushen: `git push origin feature-beschreibung`
 6. Pull Request auf GitHub erstellen und ein Teammitglied als Reviewer eintragen
 7. Review: Das Teammitglied prüft die Änderungen und gibt konstruktives Feedback (konkret, sachlich, mit Verbesserungsvorschlag)
-8. Nach Freigabe: Merge in `main` und Branch löschen
+8. Nach Freigabe: Merge in `main` und (Branch löschen) Branches bleiben vorerst zur Dokumentation bestehen 
 
 ## Code-Review-Regeln
 
