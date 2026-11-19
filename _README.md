@@ -55,6 +55,16 @@ Jedes Teammitglied ergänzt seine Rolle über einen eigenen Feature-Branch (sieh
 - **Rolle:** Quality Control und Corporate Design
 - **Aufgaben:** Gestaltung & Grafik, Gesamtbild, Marketing
 
+### Leon Rentsch
+
+- **Rolle:** ...
+- **Aufgaben:** ...
+
+### Edgar Siegler
+
+- **Rolle:** ...
+- **Aufgaben:** ...
+
 
 ## Mitarbeit
 

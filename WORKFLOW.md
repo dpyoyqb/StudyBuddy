@@ -6,8 +6,8 @@
 |------|-------|
 | Hannah Ribbers | Anforderungen und Sicherheit |
 | Patrick Schneider | Quality Control und Corporate Design |
-| [Name] | [Rolle] |
-| [Name] | [Rolle] |
+| Leon Rentsch | [Rolle] |
+| Edgar Siegler | [Rolle] |
 
 ## Unsere Branching-Strategie
 
