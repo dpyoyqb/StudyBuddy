@@ -9,7 +9,7 @@ Datei: `aktivitaetsdiagramm-dokument-hochladen.png`
   Ohne geteilte Unterlagen gibt es keine Fragen, keine Lernbereiche mit Inhalt & keine Aktivitätspunkte für den Avatar
 
 **Wichtigste Entscheidungspunkte:**
-- *Nutzer angemeldet?* – nur angemeldete Nutzer mit Hochschul-E-Mail dürfen hochladen, sonst Weiterleitung zur Anmeldung
+- *Nutzer angemeldet?* – nur angemeldete Nutzer mit Hochschul-E-Mail dürfen hochladen, sonst Anmelde Fester anzeigen und danach nochmal prüfen
 - *Eingaben gültig?* – geprüft werden Dateityp, Dateigröße, Pflichtfelder (Titel, Modul, Dokumenttyp) & die Bestätigung der Rechte am Inhalt (NF04)
 - *Lernbereich gewählt?* – entweder wird das Dokument einem geschützten Lernbereich zugeordnet (nur für Mitglieder sichtbar) oder für alle Hochschulangehörigen freigegeben
 
