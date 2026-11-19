@@ -5,11 +5,9 @@ title StudyBuddy – Aktivitätsdiagramm „Dokument hochladen und teilen“ (LF
 start
 :Upload-Seite öffnen;
 |System|
-if (Nutzer angemeldet?) then (nein)
-  :Zur Anmeldung weiterleiten;
-  stop
-else (ja)
-endif
+while (Nutzer angemeldet?) is (nein)
+  :Anmelde Fenster anzeigen;
+  endwhile (ja)
 repeat
   |Nutzer|
   :Datei auswählen und Metadaten eingeben
